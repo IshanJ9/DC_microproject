@@ -1,0 +1,1282 @@
+Backend log: HIT / MISS / BYPASS per request, SQL per database query, EVENT for cluster changes
+
+10:20:57  EVENT  Cluster started with servers A, B, C
+FlashMart running at http://localhost:8000/
+ * Serving Flask app 'app'
+ * Debug mode: off
+10:21:07  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 0  (185 ms)
+10:21:07  MISS   product:0     database     189.2 ms
+10:21:08  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 3  (184 ms)
+10:21:08  MISS   product:3     database     188.6 ms
+10:21:09  HIT    product:0     server A       0.8 ms
+10:21:11  EVENT  Flash sale started: 1000 requests from 24 concurrent users
+10:21:11  HIT    product:0     server A       3.4 ms
+10:21:11  HIT    product:0     server A       5.0 ms
+10:21:11  HIT    product:0     server A       3.7 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 120  (184 ms)
+10:21:11  MISS   product:120   database     188.0 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 9  (189 ms)
+10:21:11  MISS   product:9     database     191.8 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 24  (193 ms)
+10:21:11  MISS   product:24    database     197.0 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 4  (196 ms)
+10:21:11  MISS   product:4     database     201.3 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 6  (200 ms)
+10:21:11  MISS   product:6     database     207.4 ms
+10:21:11  HIT    product:6     server C       0.4 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 82  (205 ms)
+10:21:11  MISS   product:82    database     210.9 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 21  (209 ms)
+10:21:11  MISS   product:21    database     214.8 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 123  (212 ms)
+10:21:11  MISS   product:123   database     219.5 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 177  (216 ms)
+10:21:11  MISS   product:177   database     220.3 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 20  (220 ms)
+10:21:11  MISS   product:20    database     225.0 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 98  (224 ms)
+10:21:11  MISS   product:98    database     229.6 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 27  (228 ms)
+10:21:11  MISS   product:27    database     233.2 ms
+10:21:11  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 42  (232 ms)
+10:21:11  MISS   product:42    database     236.8 ms
+10:21:11  HIT    product:0     server A       0.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 191  (236 ms)
+10:21:12  MISS   product:191   database     240.9 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 156  (241 ms)
+10:21:12  MISS   product:156   database     244.7 ms
+10:21:12  HIT    product:0     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 86  (245 ms)
+10:21:12  MISS   product:86    database     248.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 80  (249 ms)
+10:21:12  MISS   product:80    database     258.2 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 17  (252 ms)
+10:21:12  MISS   product:17    database     261.5 ms
+10:21:12  HIT    product:0     server A       0.5 ms
+10:21:12  HIT    product:0     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 32  (256 ms)
+10:21:12  MISS   product:32    database     265.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 122  (261 ms)
+10:21:12  MISS   product:122   database     269.8 ms
+10:21:12  HIT    product:0     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 181  (265 ms)
+10:21:12  MISS   product:181   database     274.4 ms
+10:21:12  HIT    product:0     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 125  (268 ms)
+10:21:12  MISS   product:125   database     277.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 5  (272 ms)
+10:21:12  MISS   product:5     database     282.0 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 137  (277 ms)
+10:21:12  MISS   product:137   database     286.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 169  (276 ms)
+10:21:12  MISS   product:169   database     278.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 23  (276 ms)
+10:21:12  MISS   product:23    database     278.2 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 84  (276 ms)
+10:21:12  MISS   product:84    database     278.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 14  (277 ms)
+10:21:12  MISS   product:14    database     279.9 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 102  (276 ms)
+10:21:12  MISS   product:102   database     278.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 106  (276 ms)
+10:21:12  MISS   product:106   database     279.7 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 71  (276 ms)
+10:21:12  MISS   product:71    database     278.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 105  (276 ms)
+10:21:12  MISS   product:105   database     278.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 153  (276 ms)
+10:21:12  MISS   product:153   database     279.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 14  (276 ms)
+10:21:12  MISS   product:14    database     278.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 23  (276 ms)
+10:21:12  MISS   product:23    database     279.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 19  (276 ms)
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 103  (277 ms)
+10:21:12  MISS   product:19    database     282.2 ms
+10:21:12  MISS   product:103   database     279.4 ms
+10:21:12  HIT    product:21    server B       0.8 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 14  (277 ms)
+10:21:12  MISS   product:14    database     279.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 29  (276 ms)
+10:21:12  MISS   product:29    database     278.1 ms
+10:21:12  HIT    product:103   server C       0.9 ms
+10:21:12  HIT    product:0     server A       0.8 ms
+10:21:12  HIT    product:0     server A       0.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 107  (276 ms)
+10:21:12  HIT    product:27    server A       0.5 ms
+10:21:12  MISS   product:107   database     278.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 19  (276 ms)
+10:21:12  MISS   product:19    database     279.0 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 56  (277 ms)
+10:21:12  MISS   product:56    database     278.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 159  (276 ms)
+10:21:12  MISS   product:159   database     278.7 ms
+10:21:12  HIT    product:6     server C       0.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 36  (276 ms)
+10:21:12  MISS   product:36    database     277.9 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 53  (276 ms)
+10:21:12  MISS   product:53    database     278.3 ms
+10:21:12  HIT    product:17    server C       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 1  (276 ms)
+10:21:12  MISS   product:1     database     277.7 ms
+10:21:12  HIT    product:0     server A       0.8 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 140  (276 ms)
+10:21:12  MISS   product:140   database     278.3 ms
+10:21:12  HIT    product:21    server B       0.7 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 51  (276 ms)
+10:21:12  MISS   product:51    database     278.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 12  (277 ms)
+10:21:12  MISS   product:12    database     279.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 50  (276 ms)
+10:21:12  MISS   product:50    database     280.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 10  (276 ms)
+10:21:12  MISS   product:10    database     281.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 143  (276 ms)
+10:21:12  MISS   product:143   database     278.0 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 37  (276 ms)
+10:21:12  MISS   product:37    database     279.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 10  (276 ms)
+10:21:12  MISS   product:10    database     279.0 ms
+10:21:12  HIT    product:10    server A       0.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 127  (276 ms)
+10:21:12  MISS   product:127   database     279.8 ms
+10:21:12  HIT    product:53    server C       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 41  (277 ms)
+10:21:12  MISS   product:41    database     278.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 7  (276 ms)
+10:21:12  MISS   product:7     database     278.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 104  (276 ms)
+10:21:12  MISS   product:104   database     278.2 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 129  (277 ms)
+10:21:12  MISS   product:129   database     279.2 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 166  (273 ms)
+10:21:12  MISS   product:166   database     275.0 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 155  (272 ms)
+10:21:12  MISS   product:155   database     275.0 ms
+10:21:12  HIT    product:0     server A       0.4 ms
+10:21:12  HIT    product:29    server B       0.4 ms
+10:21:12  HIT    product:51    server C       0.7 ms
+10:21:12  HIT    product:0     server A       0.9 ms
+10:21:12  HIT    product:0     server A       0.5 ms
+10:21:12  HIT    product:3     server A       0.4 ms
+10:21:12  HIT    product:155   server A       0.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 150  (277 ms)
+10:21:12  MISS   product:150   database     278.9 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 16  (272 ms)
+10:21:12  MISS   product:16    database     274.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 152  (277 ms)
+10:21:12  MISS   product:152   database     278.4 ms
+10:21:12  HIT    product:166   server A       0.4 ms
+10:21:12  HIT    product:1     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 7  (277 ms)
+10:21:12  MISS   product:7     database     279.0 ms
+10:21:12  HIT    product:80    server B       0.5 ms
+10:21:12  HIT    product:82    server C       0.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 16  (276 ms)
+10:21:12  MISS   product:16    database     277.9 ms
+10:21:12  HIT    product:16    server B       0.4 ms
+10:21:12  HIT    product:0     server A       1.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 25  (276 ms)
+10:21:12  MISS   product:25    database     278.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 48  (277 ms)
+10:21:12  MISS   product:48    database     280.3 ms
+10:21:12  HIT    product:29    server B       1.0 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 193  (276 ms)
+10:21:12  HIT    product:0     server A       1.1 ms
+10:21:12  MISS   product:193   database     279.0 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 12  (277 ms)
+10:21:12  MISS   product:12    database     279.6 ms
+10:21:12  HIT    product:107   server C       1.2 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 57  (276 ms)
+10:21:12  MISS   product:57    database     280.0 ms
+10:21:12  HIT    product:71    server B       0.8 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 10  (276 ms)
+10:21:12  HIT    product:21    server B       0.7 ms
+10:21:12  HIT    product:0     server A       0.7 ms
+10:21:12  MISS   product:10    database     279.0 ms
+10:21:12  HIT    product:0     server A       0.7 ms
+10:21:12  HIT    product:12    server C       0.8 ms
+10:21:12  HIT    product:84    server C       0.8 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 174  (276 ms)
+10:21:12  MISS   product:174   database     278.7 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 101  (276 ms)
+10:21:12  MISS   product:101   database     278.2 ms
+10:21:12  HIT    product:3     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 61  (276 ms)
+10:21:12  MISS   product:61    database     278.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 2  (276 ms)
+10:21:12  MISS   product:2     database     278.8 ms
+10:21:12  HIT    product:7     server C       0.5 ms
+10:21:12  HIT    product:57    server B       0.5 ms
+10:21:12  HIT    product:1     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 57  (276 ms)
+10:21:12  MISS   product:57    database     279.1 ms
+10:21:12  HIT    product:1     server A       0.5 ms
+10:21:12  HIT    product:0     server A       0.4 ms
+10:21:12  HIT    product:1     server A       0.4 ms
+10:21:12  HIT    product:61    server C       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 188  (276 ms)
+10:21:12  MISS   product:188   database     278.7 ms
+10:21:12  HIT    product:0     server A       0.7 ms
+10:21:12  HIT    product:1     server A       0.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 2  (276 ms)
+10:21:12  MISS   product:2     database     277.8 ms
+10:21:12  HIT    product:0     server A       0.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 117  (276 ms)
+10:21:12  MISS   product:117   database     277.7 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 83  (276 ms)
+10:21:12  MISS   product:83    database     278.3 ms
+10:21:12  HIT    product:1     server A       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 88  (276 ms)
+10:21:12  MISS   product:88    database     278.9 ms
+10:21:12  HIT    product:51    server C       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 8  (272 ms)
+10:21:12  MISS   product:8     database     275.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 54  (276 ms)
+10:21:12  MISS   product:54    database     278.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 2  (276 ms)
+10:21:12  MISS   product:2     database     278.5 ms
+10:21:12  HIT    product:104   server C       0.6 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 2  (276 ms)
+10:21:12  MISS   product:2     database     278.1 ms
+10:21:12  HIT    product:3     server A       0.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 2  (276 ms)
+10:21:12  HIT    product:137   server A       0.9 ms
+10:21:12  HIT    product:152   server A       0.8 ms
+10:21:12  MISS   product:2     database     278.9 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 79  (276 ms)
+10:21:12  MISS   product:79    database     279.1 ms
+10:21:12  HIT    product:19    server B       0.5 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 85  (277 ms)
+10:21:12  MISS   product:85    database     278.8 ms
+10:21:12  HIT    product:5     server B       0.5 ms
+10:21:12  HIT    product:7     server C       0.9 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 115  (276 ms)
+10:21:12  MISS   product:115   database     278.8 ms
+10:21:12  HIT    product:8     server B       0.4 ms
+10:21:12  HIT    product:25    server C       0.4 ms
+10:21:12  HIT    product:102   server A       0.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 81  (276 ms)
+10:21:12  MISS   product:81    database     278.2 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 186  (273 ms)
+10:21:12  MISS   product:186   database     276.1 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 34  (272 ms)
+10:21:12  HIT    product:166   server A       0.4 ms
+10:21:12  HIT    product:50    server B       0.4 ms
+10:21:12  MISS   product:34    database     275.7 ms
+10:21:12  HIT    product:1     server A       0.3 ms
+10:21:12  HIT    product:71    server B       0.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 115  (272 ms)
+10:21:12  MISS   product:115   database     275.2 ms
+10:21:12  HIT    product:0     server A       0.4 ms
+10:21:12  HIT    product:174   server B       0.4 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 28  (272 ms)
+10:21:12  MISS   product:28    database     275.3 ms
+10:21:12  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 194  (276 ms)
+10:21:12  MISS   product:194   database     279.9 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 134  (276 ms)
+10:21:13  MISS   product:134   database     279.0 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:102   server A       0.4 ms
+10:21:13  HIT    product:1     server A       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:4     server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 160  (276 ms)
+10:21:13  MISS   product:160   database     277.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 147  (276 ms)
+10:21:13  MISS   product:147   database     278.7 ms
+10:21:13  HIT    product:28    server B       0.8 ms
+10:21:13  HIT    product:86    server B       0.4 ms
+10:21:13  HIT    product:7     server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 85  (276 ms)
+10:21:13  HIT    product:10    server A       0.6 ms
+10:21:13  MISS   product:85    database     277.8 ms
+10:21:13  HIT    product:2     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 138  (276 ms)
+10:21:13  MISS   product:138   database     278.1 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 44  (276 ms)
+10:21:13  MISS   product:44    database     279.2 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 144  (276 ms)
+10:21:13  MISS   product:144   database     277.7 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 30  (277 ms)
+10:21:13  HIT    product:3     server A       1.6 ms
+10:21:13  HIT    product:10    server A       1.4 ms
+10:21:13  MISS   product:30    database     280.6 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:56    server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:2     server A       0.3 ms
+10:21:13  HIT    product:10    server A       0.3 ms
+10:21:13  HIT    product:37    server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 100  (276 ms)
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  MISS   product:100   database     277.8 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:0     server A       0.7 ms
+10:21:13  HIT    product:3     server A       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 73  (277 ms)
+10:21:13  HIT    product:9     server C       0.5 ms
+10:21:13  HIT    product:102   server A       0.4 ms
+10:21:13  MISS   product:73    database     278.2 ms
+10:21:13  HIT    product:16    server B       0.6 ms
+10:21:13  HIT    product:73    server A       0.5 ms
+10:21:13  HIT    product:12    server C       0.4 ms
+10:21:13  HIT    product:14    server A       0.5 ms
+10:21:13  HIT    product:181   server B       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 55  (277 ms)
+10:21:13  HIT    product:4     server B       0.5 ms
+10:21:13  HIT    product:1     server A       0.5 ms
+10:21:13  MISS   product:55    database     278.2 ms
+10:21:13  HIT    product:54    server C       0.5 ms
+10:21:13  HIT    product:1     server A       0.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 192  (276 ms)
+10:21:13  MISS   product:192   database     278.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 121  (273 ms)
+10:21:13  MISS   product:121   database     274.9 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 184  (272 ms)
+10:21:13  MISS   product:184   database     274.2 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 65  (276 ms)
+10:21:13  MISS   product:65    database     278.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 119  (276 ms)
+10:21:13  MISS   product:119   database     278.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:107   server C       0.4 ms
+10:21:13  HIT    product:6     server C       0.3 ms
+10:21:13  HIT    product:16    server B       0.4 ms
+10:21:13  HIT    product:1     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 109  (276 ms)
+10:21:13  MISS   product:109   database     278.9 ms
+10:21:13  HIT    product:186   server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 46  (276 ms)
+10:21:13  MISS   product:46    database     277.8 ms
+10:21:13  HIT    product:8     server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 22  (276 ms)
+10:21:13  HIT    product:102   server A       0.4 ms
+10:21:13  HIT    product:1     server A       0.4 ms
+10:21:13  MISS   product:22    database     277.6 ms
+10:21:13  HIT    product:27    server A       0.5 ms
+10:21:13  HIT    product:0     server A       0.8 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 18  (272 ms)
+10:21:13  HIT    product:29    server B       0.6 ms
+10:21:13  MISS   product:18    database     274.2 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 173  (277 ms)
+10:21:13  MISS   product:173   database     279.0 ms
+10:21:13  HIT    product:50    server B       0.5 ms
+10:21:13  HIT    product:57    server B       0.4 ms
+10:21:13  HIT    product:107   server C       0.4 ms
+10:21:13  HIT    product:37    server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 13  (276 ms)
+10:21:13  MISS   product:13    database     277.4 ms
+10:21:13  HIT    product:79    server C       0.3 ms
+10:21:13  HIT    product:4     server B       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 13  (276 ms)
+10:21:13  MISS   product:13    database     278.2 ms
+10:21:13  HIT    product:23    server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 197  (276 ms)
+10:21:13  MISS   product:197   database     278.4 ms
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  HIT    product:100   server C       0.4 ms
+10:21:13  HIT    product:14    server A       0.3 ms
+10:21:13  HIT    product:104   server C       0.4 ms
+10:21:13  HIT    product:159   server B       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 18  (276 ms)
+10:21:13  MISS   product:18    database     277.9 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 13  (279 ms)
+10:21:13  MISS   product:13    database     281.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 39  (273 ms)
+10:21:13  MISS   product:39    database     275.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 148  (277 ms)
+10:21:13  MISS   product:148   database     278.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 76  (277 ms)
+10:21:13  MISS   product:76    database     278.9 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 22  (272 ms)
+10:21:13  MISS   product:22    database     274.6 ms
+10:21:13  HIT    product:7     server C       0.5 ms
+10:21:13  HIT    product:18    server B       0.4 ms
+10:21:13  HIT    product:3     server A       0.4 ms
+10:21:13  HIT    product:10    server A       0.3 ms
+10:21:13  HIT    product:85    server A       0.3 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:28    server B       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:53    server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 69  (272 ms)
+10:21:13  HIT    product:8     server B       0.3 ms
+10:21:13  HIT    product:73    server A       0.4 ms
+10:21:13  MISS   product:69    database     274.1 ms
+10:21:13  HIT    product:69    server C       0.8 ms
+10:21:13  HIT    product:0     server A       0.9 ms
+10:21:13  HIT    product:79    server C       0.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 46  (272 ms)
+10:21:13  HIT    product:21    server B       0.6 ms
+10:21:13  MISS   product:46    database     273.9 ms
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  HIT    product:98    server C       0.4 ms
+10:21:13  HIT    product:181   server B       0.4 ms
+10:21:13  HIT    product:150   server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 70  (272 ms)
+10:21:13  MISS   product:70    database     274.5 ms
+10:21:13  HIT    product:3     server A       0.4 ms
+10:21:13  HIT    product:1     server A       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 60  (272 ms)
+10:21:13  HIT    product:4     server B       0.4 ms
+10:21:13  MISS   product:60    database     274.6 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 196  (276 ms)
+10:21:13  MISS   product:196   database     278.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 40  (276 ms)
+10:21:13  MISS   product:40    database     278.9 ms
+10:21:13  HIT    product:140   server C       0.6 ms
+10:21:13  HIT    product:24    server B       0.4 ms
+10:21:13  HIT    product:44    server B       0.3 ms
+10:21:13  HIT    product:17    server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 43  (276 ms)
+10:21:13  HIT    product:8     server B       0.4 ms
+10:21:13  MISS   product:43    database     277.9 ms
+10:21:13  HIT    product:65    server A       0.5 ms
+10:21:13  HIT    product:79    server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:6     server C       0.3 ms
+10:21:13  HIT    product:4     server B       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 26  (276 ms)
+10:21:13  HIT    product:4     server B       0.4 ms
+10:21:13  HIT    product:83    server C       0.6 ms
+10:21:13  MISS   product:26    database     278.0 ms
+10:21:13  HIT    product:61    server C       0.7 ms
+10:21:13  HIT    product:55    server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 67  (276 ms)
+10:21:13  MISS   product:67    database     278.0 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 78  (276 ms)
+10:21:13  MISS   product:78    database     278.2 ms
+10:21:13  HIT    product:14    server A       0.8 ms
+10:21:13  HIT    product:9     server C       0.6 ms
+10:21:13  HIT    product:44    server B       0.5 ms
+10:21:13  HIT    product:50    server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 45  (276 ms)
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 38  (272 ms)
+10:21:13  MISS   product:45    database     278.3 ms
+10:21:13  MISS   product:38    database     275.1 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 97  (272 ms)
+10:21:13  MISS   product:97    database     274.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 43  (276 ms)
+10:21:13  MISS   product:43    database     278.3 ms
+10:21:13  HIT    product:125   server C       0.5 ms
+10:21:13  HIT    product:193   server A       0.4 ms
+10:21:13  HIT    product:25    server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 26  (272 ms)
+10:21:13  HIT    product:14    server A       0.4 ms
+10:21:13  HIT    product:0     server A       0.9 ms
+10:21:13  MISS   product:26    database     274.3 ms
+10:21:13  HIT    product:97    server C       0.6 ms
+10:21:13  HIT    product:23    server B       0.5 ms
+10:21:13  HIT    product:3     server A       0.6 ms
+10:21:13  HIT    product:0     server A       0.7 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:73    server A       0.6 ms
+10:21:13  HIT    product:83    server C       0.8 ms
+10:21:13  HIT    product:0     server A       0.8 ms
+10:21:13  HIT    product:27    server A       0.7 ms
+10:21:13  HIT    product:1     server A       0.7 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 64  (276 ms)
+10:21:13  HIT    product:65    server A       0.8 ms
+10:21:13  HIT    product:1     server A       0.6 ms
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  MISS   product:64    database     278.3 ms
+10:21:13  HIT    product:3     server A       0.9 ms
+10:21:13  HIT    product:45    server B       1.0 ms
+10:21:13  HIT    product:3     server A       1.2 ms
+10:21:13  HIT    product:39    server C       0.9 ms
+10:21:13  HIT    product:1     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 93  (276 ms)
+10:21:13  MISS   product:93    database     278.1 ms
+10:21:13  HIT    product:12    server C       0.9 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 146  (276 ms)
+10:21:13  MISS   product:146   database     278.9 ms
+10:21:13  HIT    product:1     server A       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 189  (273 ms)
+10:21:13  MISS   product:189   database     277.8 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 69  (276 ms)
+10:21:13  MISS   product:69    database     278.5 ms
+10:21:13  HIT    product:5     server B       0.5 ms
+10:21:13  HIT    product:148   server A       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 145  (276 ms)
+10:21:13  MISS   product:145   database     278.5 ms
+10:21:13  HIT    product:10    server A       0.5 ms
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 108  (276 ms)
+10:21:13  MISS   product:108   database     278.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 195  (273 ms)
+10:21:13  MISS   product:195   database     274.9 ms
+10:21:13  HIT    product:65    server A       0.4 ms
+10:21:13  HIT    product:26    server C       0.4 ms
+10:21:13  HIT    product:4     server B       0.4 ms
+10:21:13  HIT    product:9     server C       0.3 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 38  (268 ms)
+10:21:13  HIT    product:3     server A       1.1 ms
+10:21:13  HIT    product:48    server C       0.5 ms
+10:21:13  MISS   product:38    database     270.3 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 167  (273 ms)
+10:21:13  MISS   product:167   database     274.6 ms
+10:21:13  HIT    product:102   server A       0.5 ms
+10:21:13  HIT    product:57    server B       0.4 ms
+10:21:13  HIT    product:186   server B       0.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 31  (276 ms)
+10:21:13  MISS   product:31    database     277.7 ms
+10:21:13  HIT    product:25    server C       0.4 ms
+10:21:13  HIT    product:5     server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 135  (272 ms)
+10:21:13  MISS   product:135   database     273.8 ms
+10:21:13  HIT    product:169   server C       0.9 ms
+10:21:13  HIT    product:140   server C       0.6 ms
+10:21:13  HIT    product:64    server A       0.5 ms
+10:21:13  HIT    product:38    server A       0.4 ms
+10:21:13  HIT    product:143   server C       0.4 ms
+10:21:13  HIT    product:29    server B       0.4 ms
+10:21:13  HIT    product:12    server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 168  (277 ms)
+10:21:13  MISS   product:168   database     278.0 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:10    server A       0.3 ms
+10:21:13  HIT    product:1     server A       0.3 ms
+10:21:13  HIT    product:37    server C       0.8 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 116  (277 ms)
+10:21:13  MISS   product:116   database     278.1 ms
+10:21:13  HIT    product:197   server B       0.3 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:24    server B       0.3 ms
+10:21:13  HIT    product:8     server B       0.3 ms
+10:21:13  HIT    product:42    server C       0.3 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:24    server B       0.3 ms
+10:21:13  HIT    product:39    server C       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 68  (272 ms)
+10:21:13  HIT    product:19    server B       0.4 ms
+10:21:13  MISS   product:68    database     274.4 ms
+10:21:13  HIT    product:169   server C       0.4 ms
+10:21:13  HIT    product:21    server B       0.3 ms
+10:21:13  HIT    product:38    server A       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:41    server C       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 190  (272 ms)
+10:21:13  HIT    product:123   server A       0.4 ms
+10:21:13  HIT    product:105   server B       0.4 ms
+10:21:13  MISS   product:190   database     274.5 ms
+10:21:13  HIT    product:1     server A       0.3 ms
+10:21:13  HIT    product:16    server B       0.4 ms
+10:21:13  HIT    product:12    server C       0.3 ms
+10:21:13  HIT    product:2     server A       0.4 ms
+10:21:13  HIT    product:159   server B       0.3 ms
+10:21:13  HIT    product:2     server A       0.4 ms
+10:21:13  HIT    product:65    server A       0.4 ms
+10:21:13  HIT    product:98    server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 179  (277 ms)
+10:21:13  MISS   product:179   database     278.2 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 64  (276 ms)
+10:21:13  MISS   product:64    database     277.8 ms
+10:21:13  HIT    product:61    server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:13    server B       0.7 ms
+10:21:13  HIT    product:18    server B       0.5 ms
+10:21:13  HIT    product:57    server B       0.4 ms
+10:21:13  HIT    product:1     server A       0.4 ms
+10:21:13  HIT    product:19    server B       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 139  (276 ms)
+10:21:13  MISS   product:139   database     278.1 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 112  (269 ms)
+10:21:13  HIT    product:17    server C       0.5 ms
+10:21:13  MISS   product:112   database     270.4 ms
+10:21:13  HIT    product:139   server C       0.7 ms
+10:21:13  HIT    product:0     server A       3.1 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 146  (273 ms)
+10:21:13  HIT    product:0     server A       3.0 ms
+10:21:13  HIT    product:0     server A       1.3 ms
+10:21:13  HIT    product:16    server B       1.0 ms
+10:21:13  MISS   product:146   database     275.6 ms
+10:21:13  HIT    product:13    server B       0.8 ms
+10:21:13  HIT    product:69    server C       0.6 ms
+10:21:13  HIT    product:14    server A       0.6 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:67    server B       0.4 ms
+10:21:13  HIT    product:28    server B       0.4 ms
+10:21:13  HIT    product:70    server A       0.4 ms
+10:21:13  HIT    product:32    server A       0.4 ms
+10:21:13  HIT    product:28    server B       0.3 ms
+10:21:13  HIT    product:145   server B       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 179  (276 ms)
+10:21:13  HIT    product:73    server A       0.3 ms
+10:21:13  HIT    product:38    server A       0.6 ms
+10:21:13  MISS   product:179   database     278.4 ms
+10:21:13  HIT    product:9     server C       0.7 ms
+10:21:13  HIT    product:5     server B       0.6 ms
+10:21:13  HIT    product:1     server A       0.6 ms
+10:21:13  HIT    product:29    server B       0.4 ms
+10:21:13  HIT    product:18    server B       0.4 ms
+10:21:13  HIT    product:3     server A       0.4 ms
+10:21:13  HIT    product:26    server C       0.4 ms
+10:21:13  HIT    product:32    server A       0.5 ms
+10:21:13  HIT    product:64    server A       0.5 ms
+10:21:13  HIT    product:129   server C       0.4 ms
+10:21:13  HIT    product:127   server C       0.3 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 111  (268 ms)
+10:21:13  MISS   product:111   database     270.7 ms
+10:21:13  HIT    product:0     server A       0.8 ms
+10:21:13  HIT    product:148   server A       0.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 163  (272 ms)
+10:21:13  MISS   product:163   database     274.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 77  (276 ms)
+10:21:13  MISS   product:77    database     278.9 ms
+10:21:13  HIT    product:4     server B       0.5 ms
+10:21:13  HIT    product:30    server C       0.4 ms
+10:21:13  HIT    product:34    server A       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 49  (276 ms)
+10:21:13  MISS   product:49    database     278.8 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 63  (276 ms)
+10:21:13  MISS   product:63    database     278.4 ms
+10:21:13  HIT    product:10    server A       0.4 ms
+10:21:13  HIT    product:93    server C       0.5 ms
+10:21:13  HIT    product:21    server B       0.4 ms
+10:21:13  HIT    product:12    server C       0.4 ms
+10:21:13  HIT    product:61    server C       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 11  (276 ms)
+10:21:13  MISS   product:11    database     279.6 ms
+10:21:13  HIT    product:122   server A       0.5 ms
+10:21:13  HIT    product:17    server C       0.5 ms
+10:21:13  HIT    product:6     server C       0.4 ms
+10:21:13  HIT    product:2     server A       0.4 ms
+10:21:13  HIT    product:60    server C       0.3 ms
+10:21:13  HIT    product:67    server B       0.3 ms
+10:21:13  HIT    product:61    server C       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 131  (276 ms)
+10:21:13  MISS   product:131   database     279.4 ms
+10:21:13  HIT    product:49    server B       0.5 ms
+10:21:13  HIT    product:68    server B       0.7 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 158  (276 ms)
+10:21:13  HIT    product:31    server C       1.2 ms
+10:21:13  HIT    product:12    server C       0.9 ms
+10:21:13  MISS   product:158   database     278.9 ms
+10:21:13  HIT    product:88    server B       0.9 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 89  (277 ms)
+10:21:13  HIT    product:121   server B       1.3 ms
+10:21:13  HIT    product:21    server B       1.0 ms
+10:21:13  MISS   product:89    database     279.9 ms
+10:21:13  HIT    product:80    server B       0.9 ms
+10:21:13  HIT    product:7     server C       0.8 ms
+10:21:13  HIT    product:0     server A       0.8 ms
+10:21:13  HIT    product:68    server B       0.7 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 118  (272 ms)
+10:21:13  HIT    product:29    server B       0.5 ms
+10:21:13  HIT    product:70    server A       0.7 ms
+10:21:13  HIT    product:30    server C       0.6 ms
+10:21:13  HIT    product:102   server A       0.5 ms
+10:21:13  MISS   product:118   database     274.9 ms
+10:21:13  HIT    product:97    server C       0.6 ms
+10:21:13  HIT    product:41    server C       1.1 ms
+10:21:13  HIT    product:31    server C       1.2 ms
+10:21:13  HIT    product:0     server A       1.1 ms
+10:21:13  HIT    product:7     server C       1.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 162  (276 ms)
+10:21:13  HIT    product:125   server C       1.0 ms
+10:21:13  HIT    product:76    server B       0.9 ms
+10:21:13  HIT    product:93    server C       1.1 ms
+10:21:13  HIT    product:9     server C       1.1 ms
+10:21:13  HIT    product:39    server C       0.8 ms
+10:21:13  HIT    product:60    server C       0.8 ms
+10:21:13  MISS   product:162   database     278.9 ms
+10:21:13  HIT    product:0     server A       1.0 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:28    server B       0.7 ms
+10:21:13  HIT    product:82    server C       0.5 ms
+10:21:13  HIT    product:11    server A       0.5 ms
+10:21:13  HIT    product:107   server C       0.4 ms
+10:21:13  HIT    product:189   server C       0.6 ms
+10:21:13  HIT    product:155   server A       0.8 ms
+10:21:13  HIT    product:1     server A       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 179  (273 ms)
+10:21:13  HIT    product:2     server A       0.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 15  (276 ms)
+10:21:13  MISS   product:179   database     274.8 ms
+10:21:13  HIT    product:0     server A       0.7 ms
+10:21:13  MISS   product:15    database     278.5 ms
+10:21:13  HIT    product:8     server B       0.7 ms
+10:21:13  HIT    product:19    server B       0.8 ms
+10:21:13  HIT    product:116   server A       0.7 ms
+10:21:13  HIT    product:36    server C       0.7 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 114  (272 ms)
+10:21:13  HIT    product:16    server B       0.9 ms
+10:21:13  HIT    product:61    server C       0.6 ms
+10:21:13  MISS   product:114   database     274.4 ms
+10:21:13  HIT    product:4     server B       0.5 ms
+10:21:13  HIT    product:193   server A       0.4 ms
+10:21:13  HIT    product:108   server A       0.4 ms
+10:21:13  HIT    product:19    server B       0.4 ms
+10:21:13  HIT    product:1     server A       0.4 ms
+10:21:13  HIT    product:1     server A       0.3 ms
+10:21:13  HIT    product:122   server A       0.3 ms
+10:21:13  HIT    product:6     server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 35  (276 ms)
+10:21:13  MISS   product:35    database     278.6 ms
+10:21:13  HIT    product:195   server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 110  (272 ms)
+10:21:13  HIT    product:189   server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  MISS   product:110   database     274.6 ms
+10:21:13  HIT    product:29    server B       0.4 ms
+10:21:13  HIT    product:162   server A       0.4 ms
+10:21:13  HIT    product:48    server C       0.4 ms
+10:21:13  HIT    product:67    server B       0.4 ms
+10:21:13  HIT    product:17    server C       0.5 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:1     server A       0.7 ms
+10:21:13  HIT    product:23    server B       0.7 ms
+10:21:13  HIT    product:26    server C       0.6 ms
+10:21:13  HIT    product:39    server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 77  (273 ms)
+10:21:13  HIT    product:80    server B       0.5 ms
+10:21:13  MISS   product:77    database     274.6 ms
+10:21:13  HIT    product:43    server B       0.5 ms
+10:21:13  HIT    product:67    server B       0.4 ms
+10:21:13  HIT    product:129   server C       0.4 ms
+10:21:13  HIT    product:18    server B       0.4 ms
+10:21:13  HIT    product:179   server A       0.5 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:2     server A       0.4 ms
+10:21:13  HIT    product:57    server B       0.4 ms
+10:21:13  HIT    product:27    server A       0.4 ms
+10:21:13  HIT    product:26    server C       0.4 ms
+10:21:13  HIT    product:127   server C       0.5 ms
+10:21:13  HIT    product:60    server C       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 77  (276 ms)
+10:21:13  HIT    product:29    server B       0.8 ms
+10:21:13  HIT    product:67    server B       0.7 ms
+10:21:13  HIT    product:15    server A       0.6 ms
+10:21:13  HIT    product:37    server C       0.7 ms
+10:21:13  HIT    product:4     server B       0.5 ms
+10:21:13  MISS   product:77    database     279.1 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:73    server A       0.5 ms
+10:21:13  HIT    product:76    server B       0.5 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 139  (277 ms)
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  HIT    product:13    server B       0.5 ms
+10:21:13  HIT    product:0     server A       0.8 ms
+10:21:13  HIT    product:11    server A       0.7 ms
+10:21:13  HIT    product:30    server C       0.5 ms
+10:21:13  HIT    product:1     server A       0.5 ms
+10:21:13  MISS   product:139   database     278.7 ms
+10:21:13  HIT    product:13    server B       0.5 ms
+10:21:13  HIT    product:85    server A       0.5 ms
+10:21:13  HIT    product:26    server C       0.7 ms
+10:21:13  HIT    product:36    server C       0.5 ms
+10:21:13  HIT    product:41    server C       0.6 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:44    server B       0.6 ms
+10:21:13  HIT    product:53    server C       0.5 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:98    server C       1.0 ms
+10:21:13  HIT    product:0     server A       0.7 ms
+10:21:13  HIT    product:41    server C       0.6 ms
+10:21:13  HIT    product:97    server C       0.6 ms
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 126  (276 ms)
+10:21:13  HIT    product:31    server C       0.4 ms
+10:21:13  HIT    product:121   server B       0.6 ms
+10:21:13  HIT    product:14    server A       0.5 ms
+10:21:13  HIT    product:18    server B       0.5 ms
+10:21:13  MISS   product:126   database     278.2 ms
+10:21:13  HIT    product:10    server A       0.5 ms
+10:21:13  HIT    product:186   server B       0.6 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:160   server B       0.5 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:3     server A       0.5 ms
+10:21:13  HIT    product:7     server C       0.5 ms
+10:21:13  HIT    product:135   server B       0.6 ms
+10:21:13  HIT    product:0     server A       0.5 ms
+10:21:13  HIT    product:37    server C       0.4 ms
+10:21:13  HIT    product:49    server B       0.4 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  HIT    product:35    server A       0.7 ms
+10:21:13  HIT    product:15    server A       0.4 ms
+10:21:13  HIT    product:35    server A       0.4 ms
+10:21:13  HIT    product:143   server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 161  (268 ms)
+10:21:13  HIT    product:3     server A       0.3 ms
+10:21:13  HIT    product:30    server C       0.4 ms
+10:21:13  MISS   product:161   database     269.8 ms
+10:21:13  HIT    product:139   server C       0.4 ms
+10:21:13  HIT    product:101   server B       0.5 ms
+10:21:13  HIT    product:1     server A       0.3 ms
+10:21:13  HIT    product:7     server C       0.3 ms
+10:21:13  HIT    product:35    server A       0.3 ms
+10:21:13  HIT    product:114   server C       0.3 ms
+10:21:13  HIT    product:22    server C       0.8 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 87  (272 ms)
+10:21:13  HIT    product:135   server B       0.7 ms
+10:21:13  MISS   product:87    database     274.1 ms
+10:21:13  HIT    product:143   server C       0.6 ms
+10:21:13  HIT    product:82    server C       0.4 ms
+10:21:13  HIT    product:188   server C       0.4 ms
+10:21:13  HIT    product:26    server C       0.4 ms
+10:21:13  HIT    product:6     server C       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 15  (272 ms)
+10:21:13  MISS   product:15    database     273.8 ms
+10:21:13  HIT    product:6     server C       0.9 ms
+10:21:13  HIT    product:105   server B       0.6 ms
+10:21:13  HIT    product:137   server A       0.5 ms
+10:21:13  HIT    product:60    server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:10    server A       0.3 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:83    server C       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 92  (276 ms)
+10:21:13  HIT    product:3     server A       0.4 ms
+10:21:13  HIT    product:5     server B       0.5 ms
+10:21:13  MISS   product:92    database     278.0 ms
+10:21:13  HIT    product:43    server B       0.4 ms
+10:21:13  HIT    product:2     server A       0.4 ms
+10:21:13  HIT    product:104   server C       0.4 ms
+10:21:13  HIT    product:17    server C       0.5 ms
+10:21:13  HIT    product:42    server C       0.7 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 141  (276 ms)
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  MISS   product:141   database     277.9 ms
+10:21:13  HIT    product:53    server C       0.5 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  HIT    product:10    server A       0.4 ms
+10:21:13  HIT    product:17    server C       0.4 ms
+10:21:13  HIT    product:0     server A       0.3 ms
+10:21:13  HIT    product:21    server B       0.4 ms
+10:21:13  HIT    product:32    server A       0.4 ms
+10:21:13  HIT    product:12    server C       0.4 ms
+10:21:13  HIT    product:12    server C       0.3 ms
+10:21:13  HIT    product:2     server A       0.3 ms
+10:21:13  HIT    product:118   server A       0.3 ms
+10:21:13  HIT    product:16    server B       0.3 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 141  (276 ms)
+10:21:13  HIT    product:0     server A       0.7 ms
+10:21:13  MISS   product:141   database     279.0 ms
+10:21:13  HIT    product:177   server B       0.5 ms
+10:21:13  HIT    product:174   server B       0.4 ms
+10:21:13  HIT    product:0     server A       0.4 ms
+10:21:13  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 133  (277 ms)
+10:21:13  MISS   product:133   database     278.8 ms
+10:21:13  HIT    product:0     server A       0.6 ms
+10:21:14  HIT    product:190   server C       0.5 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 170  (276 ms)
+10:21:14  HIT    product:8     server B       0.7 ms
+10:21:14  MISS   product:170   database     278.0 ms
+10:21:14  HIT    product:193   server A       0.5 ms
+10:21:14  HIT    product:11    server A       0.4 ms
+10:21:14  HIT    product:76    server B       0.5 ms
+10:21:14  HIT    product:5     server B       0.4 ms
+10:21:14  HIT    product:111   server B       0.4 ms
+10:21:14  HIT    product:2     server A       0.5 ms
+10:21:14  HIT    product:7     server C       0.4 ms
+10:21:14  HIT    product:1     server A       0.5 ms
+10:21:14  HIT    product:190   server C       0.4 ms
+10:21:14  HIT    product:78    server C       0.5 ms
+10:21:14  HIT    product:51    server C       0.5 ms
+10:21:14  HIT    product:83    server C       0.7 ms
+10:21:14  HIT    product:0     server A       0.6 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 11  (276 ms)
+10:21:14  MISS   product:11    database     279.1 ms
+10:21:14  HIT    product:10    server A       0.4 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:5     server B       0.4 ms
+10:21:14  HIT    product:141   server C       0.5 ms
+10:21:14  HIT    product:6     server C       0.4 ms
+10:21:14  HIT    product:88    server B       0.4 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:85    server A       0.3 ms
+10:21:14  HIT    product:191   server B       0.4 ms
+10:21:14  HIT    product:25    server C       0.4 ms
+10:21:14  HIT    product:141   server C       0.6 ms
+10:21:14  HIT    product:174   server B       0.8 ms
+10:21:14  HIT    product:8     server B       0.5 ms
+10:21:14  HIT    product:105   server B       0.4 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  HIT    product:3     server A       0.3 ms
+10:21:14  HIT    product:0     server A       0.3 ms
+10:21:14  HIT    product:46    server C       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 171  (276 ms)
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 91  (264 ms)
+10:21:14  MISS   product:171   database     278.2 ms
+10:21:14  MISS   product:91    database     266.9 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  HIT    product:7     server C       0.6 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 165  (264 ms)
+10:21:14  MISS   product:165   database     267.3 ms
+10:21:14  HIT    product:13    server B       0.5 ms
+10:21:14  HIT    product:159   server B       0.5 ms
+10:21:14  HIT    product:8     server B       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 110  (268 ms)
+10:21:14  MISS   product:110   database     270.5 ms
+10:21:14  HIT    product:34    server A       0.5 ms
+10:21:14  HIT    product:31    server C       0.9 ms
+10:21:14  HIT    product:4     server B       0.7 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 92  (272 ms)
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 130  (268 ms)
+10:21:14  HIT    product:4     server B       0.5 ms
+10:21:14  HIT    product:138   server C       0.7 ms
+10:21:14  MISS   product:92    database     274.6 ms
+10:21:14  MISS   product:130   database     271.0 ms
+10:21:14  HIT    product:160   server B       0.5 ms
+10:21:14  HIT    product:42    server C       0.5 ms
+10:21:14  HIT    product:42    server C       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 75  (268 ms)
+10:21:14  MISS   product:75    database     270.5 ms
+10:21:14  HIT    product:8     server B       0.8 ms
+10:21:14  HIT    product:27    server A       0.6 ms
+10:21:14  HIT    product:3     server A       0.5 ms
+10:21:14  HIT    product:56    server C       0.5 ms
+10:21:14  HIT    product:26    server C       0.3 ms
+10:21:14  HIT    product:42    server C       0.3 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 75  (273 ms)
+10:21:14  MISS   product:75    database     274.2 ms
+10:21:14  HIT    product:1     server A       0.3 ms
+10:21:14  HIT    product:6     server C       0.4 ms
+10:21:14  HIT    product:127   server C       0.6 ms
+10:21:14  HIT    product:13    server B       0.7 ms
+10:21:14  HIT    product:56    server C       0.5 ms
+10:21:14  HIT    product:63    server B       0.4 ms
+10:21:14  HIT    product:7     server C       0.3 ms
+10:21:14  HIT    product:101   server B       0.4 ms
+10:21:14  HIT    product:2     server A       0.4 ms
+10:21:14  HIT    product:78    server C       0.4 ms
+10:21:14  HIT    product:10    server A       0.4 ms
+10:21:14  HIT    product:53    server C       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 183  (276 ms)
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:8     server B       0.5 ms
+10:21:14  MISS   product:183   database     277.8 ms
+10:21:14  HIT    product:26    server C       0.4 ms
+10:21:14  HIT    product:2     server A       0.6 ms
+10:21:14  HIT    product:102   server A       0.8 ms
+10:21:14  HIT    product:11    server A       0.8 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 87  (272 ms)
+10:21:14  HIT    product:11    server A       0.8 ms
+10:21:14  HIT    product:70    server A       0.6 ms
+10:21:14  HIT    product:69    server C       0.5 ms
+10:21:14  MISS   product:87    database     274.0 ms
+10:21:14  HIT    product:129   server C       0.5 ms
+10:21:14  HIT    product:34    server A       0.5 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 130  (265 ms)
+10:21:14  MISS   product:130   database     267.6 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  HIT    product:152   server A       0.4 ms
+10:21:14  HIT    product:174   server B       0.4 ms
+10:21:14  HIT    product:12    server C       0.4 ms
+10:21:14  HIT    product:127   server C       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 62  (268 ms)
+10:21:14  HIT    product:0     server A       0.6 ms
+10:21:14  HIT    product:48    server C       0.8 ms
+10:21:14  MISS   product:62    database     271.6 ms
+10:21:14  HIT    product:65    server A       0.6 ms
+10:21:14  HIT    product:1     server A       0.7 ms
+10:21:14  HIT    product:130   server A       0.4 ms
+10:21:14  HIT    product:11    server A       0.4 ms
+10:21:14  HIT    product:0     server A       0.3 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 91  (268 ms)
+10:21:14  HIT    product:181   server B       0.4 ms
+10:21:14  HIT    product:13    server B       0.5 ms
+10:21:14  MISS   product:91    database     270.5 ms
+10:21:14  HIT    product:61    server C       0.5 ms
+10:21:14  HIT    product:56    server C       0.5 ms
+10:21:14  HIT    product:1     server A       0.5 ms
+10:21:14  HIT    product:186   server B       0.4 ms
+10:21:14  HIT    product:139   server C       0.4 ms
+10:21:14  HIT    product:10    server A       0.6 ms
+10:21:14  HIT    product:130   server A       0.8 ms
+10:21:14  HIT    product:88    server B       1.0 ms
+10:21:14  HIT    product:48    server C       0.9 ms
+10:21:14  HIT    product:137   server A       0.6 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  HIT    product:43    server B       0.5 ms
+10:21:14  HIT    product:3     server A       0.5 ms
+10:21:14  HIT    product:84    server C       0.5 ms
+10:21:14  HIT    product:69    server C       0.5 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 170  (272 ms)
+10:21:14  HIT    product:6     server C       0.4 ms
+10:21:14  HIT    product:41    server C       0.5 ms
+10:21:14  MISS   product:170   database     275.1 ms
+10:21:14  HIT    product:8     server B       0.4 ms
+10:21:14  HIT    product:4     server B       0.5 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  HIT    product:18    server B       0.4 ms
+10:21:14  HIT    product:84    server C       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 165  (272 ms)
+10:21:14  HIT    product:42    server C       1.1 ms
+10:21:14  HIT    product:0     server A       0.7 ms
+10:21:14  MISS   product:165   database     274.7 ms
+10:21:14  HIT    product:32    server A       0.5 ms
+10:21:14  HIT    product:70    server A       0.5 ms
+10:21:14  HIT    product:1     server A       0.3 ms
+10:21:14  HIT    product:69    server C       0.4 ms
+10:21:14  HIT    product:1     server A       0.5 ms
+10:21:14  HIT    product:10    server A       0.5 ms
+10:21:14  HIT    product:3     server A       0.5 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  HIT    product:122   server A       0.4 ms
+10:21:14  HIT    product:121   server B       0.4 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 33  (272 ms)
+10:21:14  HIT    product:6     server C       0.4 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  MISS   product:33    database     274.2 ms
+10:21:14  HIT    product:147   server B       0.4 ms
+10:21:14  HIT    product:139   server C       0.8 ms
+10:21:14  HIT    product:1     server A       0.8 ms
+10:21:14  HIT    product:60    server C       0.6 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  HIT    product:20    server A       0.5 ms
+10:21:14  HIT    product:16    server B       0.5 ms
+10:21:14  HIT    product:61    server C       0.5 ms
+10:21:14  HIT    product:3     server A       0.4 ms
+10:21:14  HIT    product:27    server A       0.5 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 91  (276 ms)
+10:21:14  HIT    product:8     server B       0.5 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  MISS   product:91    database     277.9 ms
+10:21:14  HIT    product:1     server A       0.4 ms
+10:21:14  HIT    product:78    server C       0.5 ms
+10:21:14  HIT    product:75    server C       0.4 ms
+10:21:14  HIT    product:2     server A       0.4 ms
+10:21:14  HIT    product:83    server C       0.4 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:4     server B       0.4 ms
+10:21:14  HIT    product:2     server A       0.4 ms
+10:21:14  HIT    product:18    server B       0.8 ms
+10:21:14  HIT    product:2     server A       1.0 ms
+10:21:14  HIT    product:12    server C       0.8 ms
+10:21:14  HIT    product:25    server C       0.8 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 95  (272 ms)
+10:21:14  HIT    product:135   server B       0.9 ms
+10:21:14  HIT    product:105   server B       0.7 ms
+10:21:14  HIT    product:88    server B       0.7 ms
+10:21:14  HIT    product:115   server C       0.8 ms
+10:21:14  MISS   product:95    database     275.0 ms
+10:21:14  HIT    product:93    server C       0.9 ms
+10:21:14  HIT    product:34    server A       0.8 ms
+10:21:14  HIT    product:4     server B       0.8 ms
+10:21:14  HIT    product:44    server B       0.9 ms
+10:21:14  HIT    product:177   server B       0.7 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 33  (272 ms)
+10:21:14  HIT    product:114   server C       1.1 ms
+10:21:14  HIT    product:167   server A       1.3 ms
+10:21:14  HIT    product:8     server B       1.2 ms
+10:21:14  MISS   product:33    database     275.8 ms
+10:21:14  HIT    product:21    server B       0.8 ms
+10:21:14  HIT    product:0     server A       0.8 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 59  (272 ms)
+10:21:14  HIT    product:12    server C       0.9 ms
+10:21:14  HIT    product:38    server A       1.0 ms
+10:21:14  HIT    product:32    server A       0.7 ms
+10:21:14  HIT    product:3     server A       0.6 ms
+10:21:14  MISS   product:59    database     275.0 ms
+10:21:14  HIT    product:29    server B       0.8 ms
+10:21:14  HIT    product:15    server A       0.6 ms
+10:21:14  HIT    product:48    server C       1.0 ms
+10:21:14  HIT    product:42    server C       1.6 ms
+10:21:14  HIT    product:92    server C       1.8 ms
+10:21:14  HIT    product:29    server B       1.4 ms
+10:21:14  HIT    product:3     server A       0.9 ms
+10:21:14  HIT    product:61    server C       1.1 ms
+10:21:14  HIT    product:12    server C       0.9 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 132  (277 ms)
+10:21:14  HIT    product:159   server B       0.9 ms
+10:21:14  HIT    product:0     server A       1.1 ms
+10:21:14  HIT    product:3     server A       0.6 ms
+10:21:14  MISS   product:132   database     279.2 ms
+10:21:14  HIT    product:57    server B       0.7 ms
+10:21:14  HIT    product:3     server A       0.5 ms
+10:21:14  HIT    product:7     server C       0.7 ms
+10:21:14  HIT    product:73    server A       0.8 ms
+10:21:14  HIT    product:0     server A       0.6 ms
+10:21:14  HIT    product:13    server B       0.8 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 62  (273 ms)
+10:21:14  MISS   product:62    database     275.2 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 95  (276 ms)
+10:21:14  MISS   product:95    database     278.4 ms
+10:21:14  HIT    product:49    server B       0.5 ms
+10:21:14  HIT    product:107   server C       0.4 ms
+10:21:14  HIT    product:2     server A       0.4 ms
+10:21:14  HIT    product:118   server A       0.4 ms
+10:21:14  HIT    product:18    server B       0.4 ms
+10:21:14  HIT    product:49    server B       0.4 ms
+10:21:14  HIT    product:37    server C       0.4 ms
+10:21:14  HIT    product:0     server A       0.8 ms
+10:21:14  HIT    product:2     server A       0.6 ms
+10:21:14  HIT    product:6     server C       0.5 ms
+10:21:14  HIT    product:1     server A       0.5 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:6     server C       0.4 ms
+10:21:14  HIT    product:18    server B       0.4 ms
+10:21:14  HIT    product:111   server B       0.3 ms
+10:21:14  HIT    product:4     server B       0.4 ms
+10:21:14  HIT    product:15    server A       0.4 ms
+10:21:14  HIT    product:19    server B       0.4 ms
+10:21:14  HIT    product:102   server A       0.3 ms
+10:21:14  HIT    product:5     server B       0.4 ms
+10:21:14  HIT    product:162   server A       0.7 ms
+10:21:14  HIT    product:165   server C       0.6 ms
+10:21:14  HIT    product:85    server A       0.5 ms
+10:21:14  HIT    product:134   server A       0.4 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:130   server A       0.3 ms
+10:21:14  HIT    product:97    server C       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 180  (276 ms)
+10:21:14  HIT    product:12    server C       0.4 ms
+10:21:14  HIT    product:1     server A       0.4 ms
+10:21:14  MISS   product:180   database     277.8 ms
+10:21:14  HIT    product:27    server A       0.4 ms
+10:21:14  HIT    product:0     server A       0.5 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 136  (273 ms)
+10:21:14  MISS   product:136   database     275.4 ms
+10:21:14  HIT    product:136   server A       0.4 ms
+10:21:14  HIT    product:107   server C       0.4 ms
+10:21:14  HIT    product:53    server C       0.4 ms
+10:21:14  HIT    product:155   server A       0.4 ms
+10:21:14  HIT    product:181   server B       0.8 ms
+10:21:14  HIT    product:19    server B       0.5 ms
+10:21:14  HIT    product:88    server B       0.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 164  (276 ms)
+10:21:14  HIT    product:45    server B       0.4 ms
+10:21:14  HIT    product:78    server C       0.5 ms
+10:21:14  MISS   product:164   database     278.3 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:1     server A       0.5 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:79    server C       0.4 ms
+10:21:14  HIT    product:17    server C       0.4 ms
+10:21:14  HIT    product:69    server C       0.4 ms
+10:21:14  HIT    product:137   server A       0.4 ms
+10:21:14  HIT    product:2     server A       0.5 ms
+10:21:14  HIT    product:30    server C       0.9 ms
+10:21:14  HIT    product:145   server B       0.7 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 151  (268 ms)
+10:21:14  HIT    product:103   server C       0.6 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 74  (276 ms)
+10:21:14  MISS   product:151   database     270.4 ms
+10:21:14  HIT    product:49    server B       0.4 ms
+10:21:14  HIT    product:17    server C       0.5 ms
+10:21:14  MISS   product:74    database     278.2 ms
+10:21:14  HIT    product:12    server C       0.7 ms
+10:21:14  HIT    product:88    server B       0.4 ms
+10:21:14  HIT    product:0     server A       0.6 ms
+10:21:14  HIT    product:17    server C       0.5 ms
+10:21:14  HIT    product:70    server A       0.5 ms
+10:21:14  HIT    product:18    server B       0.6 ms
+10:21:14  HIT    product:0     server A       0.6 ms
+10:21:14  HIT    product:57    server B       0.5 ms
+10:21:14  HIT    product:11    server A       0.6 ms
+10:21:14  HIT    product:5     server B       0.7 ms
+10:21:14  HIT    product:68    server B       0.5 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 185  (272 ms)
+10:21:14  HIT    product:16    server B       0.6 ms
+10:21:14  HIT    product:48    server C       1.1 ms
+10:21:14  HIT    product:83    server C       1.2 ms
+10:21:14  HIT    product:88    server B       0.8 ms
+10:21:14  HIT    product:21    server B       0.7 ms
+10:21:14  MISS   product:185   database     274.9 ms
+10:21:14  HIT    product:34    server A       0.7 ms
+10:21:14  HIT    product:63    server B       0.5 ms
+10:21:14  HIT    product:55    server B       0.6 ms
+10:21:14  HIT    product:68    server B       0.5 ms
+10:21:14  HIT    product:0     server A       0.4 ms
+10:21:14  HIT    product:11    server A       0.4 ms
+10:21:14  HIT    product:1     server A       0.4 ms
+10:21:14  HIT    product:5     server B       0.5 ms
+10:21:14  HIT    product:2     server A       0.6 ms
+10:21:14  HIT    product:0     server A       0.6 ms
+10:21:14  HIT    product:3     server A       0.5 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 175  (277 ms)
+10:21:14  HIT    product:9     server C       0.7 ms
+10:21:14  HIT    product:60    server C       0.6 ms
+10:21:14  HIT    product:2     server A       0.5 ms
+10:21:14  HIT    product:3     server A       0.6 ms
+10:21:14  HIT    product:38    server A       0.6 ms
+10:21:14  HIT    product:26    server C       0.6 ms
+10:21:14  MISS   product:175   database     279.2 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 72  (276 ms)
+10:21:14  MISS   product:72    database     278.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 33  (268 ms)
+10:21:14  MISS   product:33    database     270.7 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 132  (272 ms)
+10:21:14  MISS   product:132   database     274.0 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 176  (276 ms)
+10:21:14  MISS   product:176   database     278.2 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 95  (272 ms)
+10:21:14  MISS   product:95    database     274.8 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 33  (269 ms)
+10:21:14  MISS   product:33    database     270.8 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 198  (272 ms)
+10:21:14  MISS   product:198   database     274.0 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 99  (273 ms)
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 172  (269 ms)
+10:21:14  MISS   product:99    database     275.4 ms
+10:21:14  MISS   product:172   database     270.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 124  (269 ms)
+10:21:14  MISS   product:124   database     271.8 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 151  (269 ms)
+10:21:14  MISS   product:151   database     271.9 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 52  (264 ms)
+10:21:14  MISS   product:52    database     268.1 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 52  (268 ms)
+10:21:14  MISS   product:52    database     271.2 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 136  (272 ms)
+10:21:14  MISS   product:136   database     275.2 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 142  (276 ms)
+10:21:14  MISS   product:142   database     278.9 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 164  (277 ms)
+10:21:14  MISS   product:164   database     278.3 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 164  (272 ms)
+10:21:14  MISS   product:164   database     274.9 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 136  (277 ms)
+10:21:14  MISS   product:136   database     278.3 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 58  (272 ms)
+10:21:14  MISS   product:58    database     275.4 ms
+10:21:14  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 52  (260 ms)
+10:21:14  MISS   product:52    database     262.4 ms
+10:21:14  EVENT  Flash sale finished
+10:21:16  HIT    product:42    server C       1.3 ms
+10:21:16  HIT    product:42    server C       0.9 ms
+10:21:19  EVENT  product:42 evicted from the cache (was on B, C)
+10:21:20  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 42  (184 ms)
+10:21:20  MISS   product:42    database     188.0 ms
+10:21:23  HIT    product:42    server C       0.7 ms
+10:21:30  HIT    product:100   server C       0.8 ms
+10:21:31  HIT    product:100   server C       0.8 ms
+10:21:33  SQL    UPDATE products SET price = 79.99 WHERE id = 100  (181 ms)
+10:21:33  EVENT  Price of product 100 changed in the database; cached copies on A, C deleted
+10:21:35  SQL    SELECT id, name, category, price, stock FROM products WHERE id = 100  (185 ms)
+10:21:35  MISS   product:100   database     187.6 ms
+10:21:42  EVENT  Server D joined: consistent hashing moved 32/200 keys (plain hash % N would move 151/200)
+10:21:45  EVENT  Server C process killed
+10:21:46  EVENT  Server C missed a heartbeat
+10:21:47  EVENT  Server C declared down: consistent hashing moved 61/200 keys (plain hash % N would move 140/200)
+10:21:53  EVENT  Server C joined: consistent hashing moved 61/200 keys (plain hash % N would move 140/200)
+10:21:59  HIT    product:2     server A       0.9 ms
+10:21:59  HIT    product:34    server A       0.7 ms
+10:22:00  HIT    product:16    server B       0.8 ms
+10:22:00  HIT    product:27    server A       0.7 ms
+10:22:01  HIT    product:29    server B       0.8 ms
+10:22:01  HIT    product:16    server B       0.8 ms
+10:22:02  HIT    product:7     server C       0.7 ms
+10:22:02  HIT    product:5     server B       1.0 ms
+10:22:03  HIT    product:28    server B       0.7 ms
+10:22:03  HIT    product:8     server B       0.7 ms

@@ -1,0 +1,4 @@
+grpcio>=1.60
+grpcio-tools>=1.60
+flask>=3.0
+pytest>=8.0

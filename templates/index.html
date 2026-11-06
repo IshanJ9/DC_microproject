@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlashMart: distributed cache demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body data-view="learn">
+
+<header class="bar">
+  <a class="brand" href="#learn" aria-label="FlashMart home">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="16" cy="5" r="3.4" fill="#4C6EF5"/><circle cx="25.5" cy="21.5" r="3.4" fill="#12B886"/><circle cx="6.5" cy="21.5" r="3.4" fill="#F76707"/></svg>
+    <span>FlashMart</span>
+  </a>
+  <nav class="tabs" aria-label="Sections">
+    <a href="#learn" data-tab="learn">Learn</a>
+    <a href="#shop" data-tab="shop">Shop</a>
+    <a href="#lab" data-tab="lab">Hashing lab</a>
+    <a href="#database" data-tab="database">Database</a>
+    <a href="#control" data-tab="control">Control room</a>
+    <a href="#split" data-tab="split">Split view</a>
+  </nav>
+  <div class="chips" id="chips" aria-live="polite"></div>
+</header>
+
+<main>
+<!-- ============ LEARN ============ -->
+<section id="learn" class="view">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>A cache that keeps working when a server dies</h1>
+      <p class="lead">FlashMart is a shop backed by a real database, with a distributed cache in front of it. Several cache servers share the work using consistent hashing, answer over gRPC, and keep a spare copy of every item.</p>
+      <div class="cta">
+        <a class="btn primary" href="#lab">Watch consistent hashing work</a>
+        <a class="btn" href="#database">See the database</a>
+        <a class="btn" href="#control">Control room</a>
+      </div>
+      <form class="locate" id="locateForm" autocomplete="off">
+        <label for="locateInput">Where does a key go?</label>
+        <div class="locate-row">
+          <input id="locateInput" value="product:42" spellcheck="false" aria-describedby="locateOut">
+          <button class="btn" type="submit">Find its server</button>
+        </div>
+        <p id="locateOut" class="locate-out" aria-live="polite">Type any key and see which server owns it on the ring.</p>
+      </form>
+    </div>
+    <div class="disc" id="heroDisc">
+      <svg id="ringHero" viewBox="0 0 440 440" role="img" aria-label="Live hash ring"></svg>
+      <p class="disc-cap">This is the live cluster. Coloured dots are products, ticks are virtual nodes.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">How it works</h2>
+  <ol class="steps">
+    <li>
+      <svg viewBox="0 0 160 110" aria-hidden="true">
+        <circle cx="30" cy="16" r="7" class="s-fill"/><circle cx="80" cy="16" r="7" class="s-fill"/><circle cx="130" cy="16" r="7" class="s-fill"/>
+        <path d="M30 26 L72 70 M80 26 V68 M130 26 L88 70" class="s-line"/>
+        <rect x="52" y="68" width="56" height="30" rx="6" class="s-box"/>
+        <text x="80" y="87" text-anchor="middle" class="s-text">Database</text>
+        <text x="80" y="108" text-anchor="middle" class="s-bad">~180 ms</text>
+      </svg>
+      <h3>Without a cache, every page waits</h3>
+      <p>Each product page asks the database. It takes about 180 ms and gets slower the more people arrive at once.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 160 110" aria-hidden="true">
+        <circle cx="80" cy="55" r="40" class="s-ring"/>
+        <circle cx="80" cy="15" r="7" fill="#4C6EF5"/><circle cx="114.6" cy="75" r="7" fill="#12B886"/><circle cx="45.4" cy="75" r="7" fill="#F76707"/>
+        <circle cx="107" cy="32" r="4.5" class="s-key"/>
+        <path d="M112 38 Q119 55 114 66" class="s-arrow"/>
+        <text x="80" y="58" text-anchor="middle" class="s-text">hash ring</text>
+      </svg>
+      <h3>Every key gets a spot on a ring</h3>
+      <p>A product's key is hashed to a point on a circle. The first server clockwise from that point owns it.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 160 110" aria-hidden="true">
+        <circle cx="80" cy="55" r="40" class="s-ring"/>
+        <circle cx="80" cy="15" r="7" fill="#4C6EF5"/><circle cx="114.6" cy="75" r="7" fill="#12B886"/><circle cx="45.4" cy="75" r="7" fill="#F76707"/>
+        <circle cx="114.6" cy="75" r="3" class="s-key"/><circle cx="45.4" cy="75" r="3" class="s-key"/>
+        <path d="M101 80 Q80 96 59 80" class="s-arrow dash"/>
+        <text x="80" y="58" text-anchor="middle" class="s-text">copy</text>
+      </svg>
+      <h3>The next server holds a spare copy</h3>
+      <p>If the owner stops answering, reads go to the replica. Shoppers never see an error.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 160 110" aria-hidden="true">
+        <circle cx="80" cy="55" r="40" class="s-ring"/>
+        <path d="M80 15 A40 40 0 0 1 114.6 75" class="s-hot"/>
+        <circle cx="80" cy="15" r="7" fill="#4C6EF5"/><circle cx="114.6" cy="75" r="7" fill="#12B886"/><circle cx="45.4" cy="75" r="7" fill="#F76707"/>
+        <circle cx="114.6" cy="75" r="7" class="s-x"/>
+        <path d="M109 69 L120 81 M120 69 L109 81" class="s-cross"/>
+        <text x="80" y="58" text-anchor="middle" class="s-text">1/N moves</text>
+      </svg>
+      <h3>Servers can join or leave</h3>
+      <p>Only the keys next to the change move. Plain <code>hash(key) % N</code> would reshuffle most of them.</p>
+    </li>
+  </ol>
+
+  <h2 class="section-title">What runs where</h2>
+  <div class="arch">
+    <div class="arch-box"><b>Browser</b><span>Shop and control room</span></div>
+    <div class="arch-link">HTTP</div>
+    <div class="arch-box strong"><b>Coordinator</b><span>Flask, hash ring, replication, heartbeats</span></div>
+    <div class="arch-link">gRPC</div>
+    <div class="arch-box"><b>Cache nodes</b><span>One process each, own port, own memory</span></div>
+    <div class="arch-link soft">on a miss</div>
+    <div class="arch-box soft"><b>SQLite database</b><span>The source of truth, deliberately slow</span></div>
+  </div>
+
+  <h2 class="section-title">Concepts this project covers</h2>
+  <ul class="concepts">
+    <li><b>Remote procedure calls</b> Nodes expose Get, Put, Delete, Ping and more over gRPC.</li>
+    <li><b>Partitioning</b> Consistent hashing with virtual nodes spreads keys evenly.</li>
+    <li><b>Replication</b> Each key lives on two servers.</li>
+    <li><b>Failure detection</b> Two missed heartbeats mark a server down.</li>
+    <li><b>Fault tolerance</b> Reads fail over to the replica during the gap.</li>
+    <li><b>Rebalancing</b> Joins and failures move only the affected keys.</li>
+  </ul>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section id="shop" class="view">
+  <div class="view-head">
+    <div>
+      <h1>Flash sale</h1>
+      <p class="sub">Open any product. Each page load reads through the distributed cache first.</p>
+    </div>
+    <button class="btn primary" id="shopper">Start auto-shopper</button>
+  </div>
+  <div class="shop-layout">
+    <div class="grid" id="grid"></div>
+    <aside class="path-card" aria-live="polite">
+      <h2>Last page load</h2>
+      <div id="path" class="path-empty">Open a product to see where its data came from.</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ HASHING LAB ============ -->
+<section id="lab" class="view">
+  <div class="view-head">
+    <div>
+      <h1>Hashing lab</h1>
+      <p class="sub">See consistent hashing work, one step at a time. Everything here runs on the live cluster.</p>
+    </div>
+  </div>
+  <div class="lab-layout">
+    <div class="ring-col">
+      <div class="disc">
+        <svg id="ringLab" viewBox="0 0 440 440" role="img" aria-label="Hash ring for the lab"></svg>
+        <div class="legend" id="legendLab"></div>
+        <p class="disc-cap" id="labCap">The coloured band shows which server owns each stretch of the ring.</p>
+      </div>
+    </div>
+    <div class="side-col">
+      <div class="panel">
+        <h2>Follow one key</h2>
+        <form id="traceForm" class="locate-row" autocomplete="off">
+          <input id="traceInput" value="product:42" spellcheck="false" aria-label="Key to follow">
+          <button class="btn primary" type="submit">Start</button>
+          <button class="btn" type="button" id="traceEvict">Remove it from the cache</button>
+        </form>
+        <p class="hint">Use <code>product:0</code> to <code>product:199</code> for the full journey through the cache and the database. Any other text, such as <code>user:7</code>, shows the hashing steps only.</p>
+        <ol id="traceSteps" class="trace"></ol>
+        <div class="trace-nav">
+          <button class="btn small" id="tracePrev">Back</button>
+          <button class="btn small primary" id="traceNext">Next step</button>
+          <button class="link" id="traceAll">Show all steps</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>What happens when a server joins or leaves?</h2>
+        <p class="hint">This is a preview. The real cluster is not changed.</p>
+        <div class="controls">
+          <select id="simAction" aria-label="Change to preview"><option value="add">Add a server</option><option value="remove">Remove a server</option></select>
+          <select id="simNode" aria-label="Server to remove" hidden></select>
+          <button class="btn primary" id="simRun">Preview</button>
+          <span class="seg" id="simView" role="group" aria-label="Ring view">
+            <button data-v="before" class="on">Before</button><button data-v="after">After</button>
+          </span>
+        </div>
+        <p id="simErr" class="err" role="alert"></p>
+        <div id="simOut" class="empty">Press Preview to see which keys would move, side by side with plain <code>hash % N</code>.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Key map</h2><input id="mapFilter" placeholder="Filter, for example product:4 or B" aria-label="Filter keys"></div>
+        <p class="hint">All 200 keys in ring order, the order a clockwise walk meets them.</p>
+        <div class="tablewrap short"><table class="tbl" id="keyMap"></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DATABASE ============ -->
+<section id="database" class="view">
+  <div class="view-head">
+    <div>
+      <h1>Database</h1>
+      <p class="sub">A real SQLite table in <code>flashmart.db</code>. The cache sits in front of it. Read a row to watch the cache and the database take turns, or change a price to see the cached copy get thrown away.</p>
+    </div>
+  </div>
+  <div class="db-layout">
+    <div class="panel">
+      <div class="panel-head"><h2>products table</h2><input id="dbFilter" placeholder="Filter rows" aria-label="Filter rows"></div>
+      <div class="tablewrap"><table class="tbl dbt" id="dbTable"></table></div>
+    </div>
+    <div class="side-col">
+      <div class="panel">
+        <h2>How a read works</h2>
+        <ol class="flow">
+          <li>Ask the key's owner server (then its replica) for the row.</li>
+          <li>Found: return it. This is a cache <b>hit</b>.</li>
+          <li>Not found: run <code>SELECT</code> on the database, return the row, and store a copy on both servers.</li>
+        </ol>
+        <div class="split-count" id="dbCounts"></div>
+        <p id="dbNote" class="note" aria-live="polite">Use Read on a row. Read it twice: first from the database, then from the cache.</p>
+      </div>
+      <div class="panel">
+        <h2>SQL the database has run</h2>
+        <div class="log sql" id="sqlLog"><div class="empty">Nothing yet.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="db-bottom">
+    <div class="panel">
+      <h2>Every cache hit and miss</h2>
+      <p class="hint">Stored in the <code>access_log</code> table. The same lines print in the terminal running the app.</p>
+      <div class="split-count three" id="accessTotals"></div>
+      <div class="tablewrap short"><table class="tbl" id="accessLog"></table></div>
+    </div>
+    <div class="panel">
+      <h2>Ask the database yourself</h2>
+      <p class="hint">Read-only SQL on <code>flashmart.db</code>. Tables: <code>products</code>, <code>access_log</code>, <code>query_log</code>.</p>
+      <div class="chipbar" id="sqlPresets"></div>
+      <textarea id="sqlBox" spellcheck="false" rows="4" aria-label="SQL query">SELECT result, COUNT(*) AS requests FROM access_log GROUP BY result</textarea>
+      <div class="inline"><button class="btn primary small" id="sqlRun">Run query</button><span id="sqlErr" class="err" role="alert"></span></div>
+      <div class="tablewrap short" id="sqlResultWrap" hidden><table class="tbl" id="sqlResult"></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTROL ROOM ============ -->
+<section id="control" class="view">
+  <div class="view-head">
+    <div>
+      <h1>Control room</h1>
+      <p class="sub">The cluster as an engineer sees it. Follow the steps on the right, or use the manual controls.</p>
+    </div>
+  </div>
+  <div class="control-layout">
+    <div class="ring-col">
+      <div class="disc">
+        <svg id="ringControl" viewBox="0 0 440 440" role="img" aria-label="Live hash ring"></svg>
+        <div class="legend" id="legend"></div>
+        <p class="disc-cap">Filled dot: product is cached. Hollow dot: not cached yet. A white pulse marks a request that just happened.</p>
+      </div>
+    </div>
+    <div class="side-col">
+      <div class="kpis" id="kpis"></div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Run the demo</h2><button class="link" id="resetDemo">Start over</button></div>
+        <ol class="tour" id="tour"></ol>
+      </div>
+
+      <div class="panel">
+        <h2>Servers</h2>
+        <div class="nodes" id="nodes"></div>
+      </div>
+
+      <div class="panel" id="comparePanel">
+        <h2>How many keys moved</h2>
+        <div id="compare" class="empty">Add or kill a server and this shows how many of the 200 products had to move.</div>
+      </div>
+
+      <details class="panel manual">
+        <summary>Manual controls</summary>
+        <div class="manual-grid">
+          <div>
+            <label class="field"><span>Traffic</span>
+              <span class="inline"><select id="reqs"><option value="400">400 requests</option><option value="1000" selected>1000 requests</option><option value="2000">2000 requests</option></select>
+              <button class="btn" id="sale">Run flash sale</button></span></label>
+            <label class="check"><input type="checkbox" id="cacheOn" checked> Cache enabled</label>
+            <label class="field"><span>Virtual nodes per server: <b id="vnodesOut">40</b></span>
+              <input type="range" id="vnodes" min="1" max="200" value="40"></label>
+          </div>
+          <div>
+            <div class="field"><span>Servers</span>
+              <span class="inline"><button class="btn" id="add">Add or revive server</button>
+              <select id="victim" aria-label="Server to kill"></select><button class="btn danger" id="kill">Kill</button></span></div>
+            <div class="field"><span>Caches</span><span class="inline"><button class="btn" id="reset">Clear all caches</button></span></div>
+            <p id="err" class="err" role="alert"></p>
+          </div>
+        </div>
+      </details>
+
+      <div class="panel">
+        <h2>What just happened</h2>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script src="/static/app.js"></script>
+<script src="/static/lab.js"></script>
+</body>
+</html>

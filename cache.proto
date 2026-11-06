@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package flashcache;
+
+service CacheNode {
+  rpc Get(GetRequest) returns (GetReply);
+  rpc Put(PutRequest) returns (PutReply);
+  rpc Delete(DeleteRequest) returns (DeleteReply);
+  rpc Keys(Empty) returns (KeysReply);
+  rpc Ping(Empty) returns (PingReply);
+  rpc Stats(Empty) returns (StatsReply);
+  rpc Clear(Empty) returns (Empty);
+}
+
+message Empty {}
+
+message GetRequest {
+  string key = 1;
+  bool internal = 2; // rebalancing reads must not skew hit/miss stats
+}
+message GetReply {
+  bool found = 1;
+  string value = 2;
+}
+
+message PutRequest {
+  string key = 1;
+  string value = 2;
+  int32 ttl_seconds = 3; // 0 = never expires
+}
+message PutReply { bool ok = 1; }
+
+message DeleteRequest { string key = 1; }
+message DeleteReply { bool existed = 1; }
+
+message KeysReply { repeated string keys = 1; }
+
+message PingReply {
+  string name = 1;
+  int64 uptime_ms = 2;
+}
+
+message StatsReply {
+  string name = 1;
+  int32 size = 2;
+  int32 capacity = 3;
+  int64 hits = 4;
+  int64 misses = 5;
+  int64 evictions = 6;
+}
